@@ -1,0 +1,10 @@
+= a.fields_for :locations do |l|
+
+  .col-md-12
+    = l.input :name, autofocus: true, placeholder: 'Location Name', label: "Name this location (HQ, Main Office)", required: true
+    = l.input :phone_number, placeholder: 'Location Phone Number', label: "Location phone number", required: true
+    = l.input :address, placeholder: 'Address', required: true
+    = l.input :city, placeholder: 'City', required: true
+    = l.input :state, placeholder: 'Enter your provnice', input_html: { autocomplete: 'off' }, required: true
+    = l.input :country, placeholder: 'Country', required: true
+    = l.input :zip, placeholder: 'Zip Code', required: true

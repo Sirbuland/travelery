@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    = render 'layouts/head_items'
+  body.page-header-fixed.page-sidebar-closed-hide-logo.page-sidebar-fixed.page-content-white.page-footer-fixed[class="#{controller_name}-#{action_name} #{@body_class}"]
+    header
+      = render 'layouts/flash_messages'
+    - if user_signed_in? && !is_devise?
+      .page-wrapper
+        = render 'layouts/nav_items'
+        .clearfix
+        - if action_name == "info"
+          .page-content
+            .content-box
+              = yield
+        - else
+          .page-container
+            = render 'layouts/sidebar'
+            .page-content-wrapper
+              .page-content
+                .content-box
+                  = yield
+
+    - else
+      = yield

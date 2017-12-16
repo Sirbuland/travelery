@@ -1,0 +1,420 @@
+$default-color: #27aae1;
+$font-color: #ddd;
+$default-color-dark: darken($default-color, 10%);
+$light-color: lighten($default-color, 20%);
+$dark-color: darken($default-color, 20%);
+$contrast-color: teal;
+$warning-color: yellow;
+$important-color: red;
+$information-color: blue;
+
+a:hover, a:focus {
+  color: $default-color-dark;
+  text-decoration: none;
+}
+
+.defult-color {
+  color: $default-color;
+}
+
+.registrations-registration_confirmation {
+  background-color: aliceblue;
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+
+  .portlet {
+    border-radius: 10px;
+    box-shadow: 5px 7px 17px 3px rgba(0,0,0,0.1);
+
+    img {
+      width: 100%;
+      // border-top-left-radius: 10px;
+      // border-top-right-radius: 10px;
+    }
+  }
+
+  h4 {
+    line-height: 28px;
+  }
+
+  h5 {
+    border-top: 1px solid #e7e7e7;
+    padding: 15px 15px 6px;
+    line-height: 20px;
+  }
+}
+
+#signin_page,
+.passwords-new,
+.passwords-edit,
+.passwords-update,
+.confirmations-new,
+.confirmations-show,
+.invitations-edit,
+.invitations-update  {
+  .form {
+    margin-top:15%;
+  }
+}
+
+%devise_form {
+  form {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    -ms-flex-pack: justify;
+    -webkit-box-pack: justify;
+
+    .form-control {
+      height: 40px;
+      font-size: 16px;
+    }
+  }
+}
+
+
+#new_company_modal {
+  @extend %devise_form;
+}
+
+#signup_page,
+#signin_page,
+.passwords-new,
+.passwords-edit,
+.passwords-update,
+.confirmations-new,
+.confirmations-show,
+.invitations-edit,
+.invitations-update {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+
+  .portlet {
+    border-radius: 0px;
+  }
+
+  @extend %devise_form;
+
+  #graphic_section_wrapper {
+    background-color: $default-color;
+
+    .bubble {
+      position: relative;
+      min-width: 455px;
+      min-height: 120px;
+      padding: 20px;
+      background: #FFFFFF;
+      -webkit-border-radius: 11px;
+      -moz-border-radius: 11px;
+      border-radius: 11px;
+      border: #eee solid 7px;
+      z-index: 0;
+      -webkit-box-shadow: 8px 8px 5px 0px rgba(0,0,0,0.35);
+      -moz-box-shadow: 8px 8px 5px 0px rgba(0,0,0,0.35);
+      box-shadow: 8px 8px 5px 0px rgba(0,0,0,0.35);
+    }
+
+    .bubble:after {
+      content: '';
+      position: absolute;
+      border-style: solid;
+      border-width: 15px 17px 0;
+      border-color: #FFFFFF transparent;
+      display: block;
+      width: 0;
+      z-index: 1;
+      bottom: -15px;
+      left: 320px;
+    }
+
+    .bubble:before {
+      content: '';
+      position: absolute;
+      border-style: solid;
+      border-width: 21px 23px 0;
+      border-color: #eee transparent;
+      display: block;
+      width: 0;
+      z-index: 0;
+      bottom: -28px;
+      left: 314px;
+    }
+
+    .quoter {
+      font-family: "Lato";
+      color: #545454;
+
+      .quote {
+        font-size: 2em;
+        font-style: italic;
+        line-height: 1.3em;
+        font-weight: 600;
+        letter-spacing: -0.6px;
+      }
+
+      .quotee {
+        font-size: 1.2em;
+        margin-top: 20px;
+
+        &:before {
+          content: "- "
+        }
+      }
+    }
+
+    .quote-img {
+      float: right;
+      margin-top: -20px;  // for picture: <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    }
+  }
+}
+
+.split_section {
+  min-height: 100vh;
+}
+
+#form_section_wrapper {
+  color: #434245;
+  float: left;
+  background: white;
+}
+
+#graphic_section_wrapper {
+  background-size: cover;
+  position: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  float: right;
+  right: 0;
+}
+
+.rocket1 { background-image: image-url('businessman_rocket1.jpg'); } //CREDIT PICS <a href="http://www.freepik.com/free-vector/businessmen-with-a-rocket_1076087.htm">Designed by Freepik</a>
+.rocket2 { background-image: image-url('businessman_rocket2.jpg'); }
+.rocket3 { background-image: image-url('businessman_rocket3.jpg'); }
+.rocket4 { background-image: image-url('businessman_rocket4.jpg'); }
+
+
+.form-wizard {
+
+  .progress {
+    height: 5px;
+  }
+
+  .steps {
+    padding: 10px 0;
+    margin-bottom: 15px;
+    background-color: #fff;
+    background-image: none;
+    filter: none;
+    border: 0px;
+    box-shadow: none;
+
+    li {
+
+      .step {
+        background-color: #fff;
+        background-image: none;
+        filter: none;
+        border: 0px;
+        box-shadow: none;
+
+        &:hover {
+          background: none;
+        }
+
+        .number {
+          background-color: #eee;
+          display: inline-block;
+          text-align: center !important;
+          font-size: 16px;
+          font-weight: 300;
+          padding: 11px 15px 13px 15px;
+          margin-right: 10px;
+          height: 45px;
+          width: 45px;
+          -webkit-border-radius: 50% !important;
+          -moz-border-radius: 50% !important;
+          border-radius: 50% !important;
+        }
+
+        .desc {
+          display: inline-block;
+          font-size: 16px;
+          font-weight: 300;
+        }
+      }
+    }
+
+    li.active > a.step {
+
+      .number {
+        background-color: #36c6d3;
+        color: #fff;
+      }
+
+      .desc {
+        color: #333;
+      }
+    }
+
+    li.done > a.step {
+
+      .number {
+        background-color: #F1C40F;
+        color: #fff;
+      }
+
+      .desc {
+        color: #333;
+      }
+    }
+  }
+}
+#form_section_wrapper,
+#new_company_modal {
+  .radiosGr {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow: hidden;
+    padding: 1px;
+    label{
+      -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+      -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 0px rgba(0, 0, 0, 0.1) inset;
+      display:inline-block;
+      width: 92%;
+      padding: 10px;
+      text-align: center;
+      vertical-align: center;
+    }
+    input[type=radio]{
+      display: none;
+    }
+    .radio_active{
+      border-color: #32c5d2;
+      color: #FFFFFF;
+      background-color: #32c5d2;
+    }
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  /* 768px & 1200px */
+  .form-wizard .step .desc {
+    margin-top: 10px;
+    display: block; } }
+
+@media (max-width: 768px) {
+  /* 768px */
+  .form-wizard .steps > li > a {
+    text-align: left; }
+}
+
+.mt-element-step .step-line .mt-step-col {
+  padding: 10px 0;
+  text-align: center;
+
+  .steps-icon {
+    position: absolute;
+    top: 7px;
+    left: 9px;
+    width: 70%;
+    opacity: 0.1;
+  }
+}
+
+.mt-element-step .step-line .mt-step-number {
+  color: #e5e5e5;
+  font-size: 26px;
+  border-radius: 50% !important;
+  display: inline-block;
+  margin: auto;
+  padding: 9px;
+  margin-bottom: 5px;
+  border: 3px solid;
+  border-color: #e5e5e5;
+  position: relative;
+  z-index: 5;
+  height: 60px;
+  width: 60px;
+  text-align: center; }
+  .mt-element-step .step-line .mt-step-number > i {
+    position: relative;
+    top: 50%;
+    transform: translateY(-120%); }
+
+.mt-element-step .step-line .mt-step-title {
+  font-size: 12px;
+  font-weight: 400;
+  position: relative;
+  letter-spacing: 0.4px }
+  .mt-element-step .step-line .mt-step-title:after {
+    content: '';
+    height: 3px;
+    width: 50%;
+    position: absolute;
+    background-color: #e5e5e5;
+    top: -32px;
+    left: 50%;
+    z-index: 4;
+    transform: translateY(-100%); }
+  .mt-element-step .step-line .mt-step-title:before {
+    content: '';
+    height: 3px;
+    width: 50%;
+    position: absolute;
+    background-color: #e5e5e5;
+    top: -32px;
+    right: 50%;
+    z-index: 4;
+    transform: translateY(-100%); }
+
+.mt-element-step .step-line .first .mt-step-title:before {
+  content: none; }
+
+.mt-element-step .step-line .last .mt-step-title:after {
+  content: none; }
+
+.mt-element-step .step-line .active .mt-step-number {
+  color: #27aae1 !important;
+  border-color: #27aae1 !important; }
+
+.mt-element-step .step-line .active .steps-icon {
+  opacity: 1;
+}
+
+.mt-element-step .step-line .active .mt-step-title,
+.mt-element-step .step-line .active .mt-step-content {
+  color: #27aae1 !important; }
+
+.mt-element-step .step-line .active .mt-step-title:after, .mt-element-step .step-line .active .mt-step-title:before {
+  background-color: #27aae1; }
+
+.mt-element-step .step-line .done .mt-step-number {
+  color: #26C281 !important;
+  border-color: #e5e5e5 !important; }
+
+.mt-element-step .step-line .done .mt-step-title,
+.mt-element-step .step-line .done .mt-step-content {
+  color: #95A5A6 !important; }
+
+.mt-element-step .step-line .done .mt-step-title:after, .mt-element-step .step-line .done .mt-step-title:before {
+  background-color: #e5e5e5; }
+
+.mt-element-step .step-line .error .mt-step-number {
+  color: #E7505A !important;
+  border-color: #E7505A !important; }
+
+.mt-element-step .step-line .error .mt-step-title,
+.mt-element-step .step-line .error .mt-step-content {
+  color: #E7505A !important; }
+
+.mt-element-step .step-line .error .mt-step-title:after, .mt-element-step .step-line .error .mt-step-title:before {
+  background-color: #E7505A; }

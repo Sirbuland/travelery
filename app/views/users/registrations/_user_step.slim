@@ -1,0 +1,24 @@
+.row.no-pad
+  .col-md-6
+    = f.input :first_name, autofocus: true, placeholder: 'First name', required: true
+  .col-md-6
+    = f.input :last_name, placeholder: 'Last name', required: true
+.row.no-pad
+  .col-md-12
+    = f.input :nic, placeholder: 'National identity card number',required: true, label: "NIC"
+.row.no-pad
+  .col-md-12
+    = f.input :email, placeholder: 'Your email address', required: true
+.row.no-pad  
+  .col-md-12
+    = f.input :password, placeholder: 'Password', required: true
+    - if @minimum_password_length
+      small
+        | (#{@minimum_password_length}
+        | characters minimum)
+.row.no-pad
+  .col-md-12
+    = f.input :cell_number, placeholder: 'Your personnel phone/mobile number', required: true
+.row.no-pad
+  .col-md-12
+    = f.input :office_phone_number, placeholder: 'Your office phone number', required: true

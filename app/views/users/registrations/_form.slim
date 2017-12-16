@@ -1,0 +1,40 @@
+= simple_form_for resource, as: resource_name, url: registration_path(resource_name), html: { class: "form-vertical" } do |f|
+  = f.fields_for :agency_users do |au|
+    = au.fields_for :agency do |a|
+      .form-wizard
+        span.form-body
+          = render 'steps'
+
+          .tab-content
+            #tab1.tab-pane.active
+              h3.block.col-md-12.no-pad Create your account
+
+              .col-md-12
+                = devise_error_messages!
+
+              = hidden_field_tag 'invite_code', @invite_code
+
+              = render partial: 'user_step', locals: {f: f, au: au, a: a}
+              = render 'form_actions'
+
+            #tab2.tab-pane
+              h3.block.col-md-12 Set up your company
+
+              = render 'company_step', a: a
+              = render 'form_actions'
+
+            #tab3.tab-pane
+              h3.block.col-md-12 Where is your company located?
+
+              = render 'location_step', a: a
+              = render 'form_actions'
+
+            #tab4.tab-pane
+
+              h3.block.col-md-12.mb00 Let's confirm that everything is accurate
+              h5.col-md-12.mb00.mt00.fbold If you need to change anything, use the 'Back' button below instead of your browser
+
+              .col-md-12
+                = render 'form_confirmation_tab'
+
+              = render 'form_actions'

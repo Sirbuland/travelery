@@ -1,0 +1,20 @@
+.portlet.light.mb00
+  = link_to nodomain_root_url do
+    = image_tag 'logo.png', height: '50'
+  .portlet-body.form
+    = simple_form_for resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-vertical devise_form', id: 'new_session' } do |f|
+
+      h3.block.col-md-12 Sign in to your account
+      = devise_error_messages!
+      .col-md-12
+        = f.input :email, autofocus: true, placeholder: 'Email', required: true
+        = f.input :password, autocomplete: "off", placeholder: 'Password', required: true
+        - if params[:redirect_to]
+          = hidden_field_tag :redirect_to, params[:redirect_to]
+        = link_to "Forgot your password?", new_user_password_path, class: 'font-blue right-align mt05'
+        .form-actions
+          .row
+            .col-md-12.text-center
+              = button_tag type: 'submit', id: "submitForm", class: "btn green btn-lg" do
+                | Sign In
+                i.fa.fa-angle-right.ml05.mr00

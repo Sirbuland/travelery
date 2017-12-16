@@ -1,0 +1,31 @@
+.mt-element-step.col-md-12
+  ul.nav.nav-pills.nav-justified.steps.step-line.row
+
+    li.col-md-3.mt-step-col.first.active
+      a.step.no-pad[href="#tab1" data-toggle="tab"]
+        .mt-step-number.bg-white
+          = image_tag 'profile_manager.png', class: 'steps-icon'
+      .desc.mt-step-title.uppercase.font-grey-cascade Your info
+
+    li.col-md-3.mt-step-col
+      a.step.no-pad[href="#tab2" data-toggle="tab"]
+        .mt-step-number.bg-white
+          = image_tag 'building.png', class: 'steps-icon'
+      .desc.mt-step-title.uppercase.font-grey-cascade Company info
+
+    li.col-md-3.mt-step-col
+      a.step.no-pad[href="#tab3" data-toggle="tab"]
+        .mt-step-number.bg-white
+          = image_tag 'location_marker.png', class: 'steps-icon'
+      .desc.mt-step-title.uppercase.font-grey-cascade Location info
+
+    li.col-md-3.mt-step-col.last
+      a.step.no-pad[href="#tab4" data-toggle="tab"]
+        .mt-step-number.bg-white
+          = image_tag 'review.png', class: 'steps-icon'
+      .desc.mt-step-title.uppercase.font-grey-cascade Review
+
+.row.no-pad
+  .col-md-12
+    #bar.progress.progress-striped[role="progressbar"]
+      .progress-bar.progress-bar-success

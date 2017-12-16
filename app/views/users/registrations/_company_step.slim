@@ -1,0 +1,37 @@
+.col-md-12
+  = a.input :name, autocomplete: "off", placeholder: 'Agency Name', required: true, label: "Agency name"
+
+.col-md-12
+  .form-group.has-feedback.company_domain_name
+    label.required.small.control-label
+
+      abbr[title="required"] *
+      |  Domain name
+
+    .input-group
+      = a.text_field :subdomain, autocomplete: "off", class: 'form-control domain_name', placeholder: 'Claim your domain', required: true
+      span.input-group-addon .travelit.com
+      span.form-control-feedback.glyphicon
+
+.col-md-12
+  label.required.small.control-label
+    abbr[title="required"] *
+    | Number of employees
+  .radiosGr
+    .col-md-3.col-sm-6.p0
+      label
+        | 1-4
+        = a.radio_button :number_of_employees, 4, class: "radio", id: "user_agency_users_attributes_0_agency_attributes_number_of_employees", c_text: "1-4"
+
+    .col-md-3.col-sm-6.p0
+      label.radio_active
+        | 5-25
+        = a.radio_button :number_of_employees, 25, class: "radio", id: "user_agency_users_attributes_0_agency_attributes_number_of_employees", c_text: "5-25", checked: true
+    .col-md-3.col-sm-6.p0
+      label
+        | 26-99
+        = a.radio_button :number_of_employees, 99, class: "radio", id: "user_agency_users_attributes_0_agency_attributes_number_of_employees", c_text: "26-99"
+    .col-md-3.col-sm-6.p0
+      label.full-width
+        | 100+
+        = a.radio_button :number_of_employees, 100, class: "radio", id: "user_agency_users_attributes_0_agency_attributes_number_of_employees", c_text: "100+"
