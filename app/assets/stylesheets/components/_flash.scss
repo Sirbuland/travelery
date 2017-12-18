@@ -1,0 +1,38 @@
+.flash-alert {
+  border: 0;
+  box-shadow: map-get($shadows, 4);
+  padding-bottom: 1rem;
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  z-index: 99999;
+}
+
+.flash-alert__closing-bar {
+  background-color: transparent;
+  border-radius: 0 0 $border-radius $border-radius;
+  bottom: 0;
+  display: block;
+  height: 4px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+
+  &:after {
+    background-color: rgba(0,0,0,0.35);
+    content: "";
+    display: block;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: all 5s linear;
+    width: 100%;
+  }
+
+  &.js-closing:after {
+    transform: scaleX(0);
+  }
+}

@@ -1,0 +1,26 @@
+a,
+.btn {
+  cursor: pointer;
+}
+
+.btn[disabled] {
+  background: $gray-500;
+  border-color: $gray-500;
+  color: $black;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.btn-link {
+  cursor: pointer;
+}
+
+// Add a 'default' style
+.btn-default {
+  background-color: $gray-300;
+  border-color: $gray-300;
+}
+
+.btn-shadow {
+  box-shadow: $shadow-base;
+}

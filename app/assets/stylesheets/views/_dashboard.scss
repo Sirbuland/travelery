@@ -1,0 +1,74 @@
+$color-warranty-safe: #36d7b7;
+$color-warranty-expiring: #E87E04;
+$color-warranty-expired: #e7505a;
+
+.bus-stat {
+  background-position: 0.5rem bottom;
+  background-repeat: no-repeat;
+  background-size: 4rem;
+  display: block;
+  padding: 1.5rem 0.75rem;
+  text-align: right;
+  transition: $transition-base;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:hover > div {
+    text-decoration: underline;
+  }
+}
+
+/*.bus-stat--contracts {
+  background-image: image-url('businessStats_contractIcon.png');
+}
+
+.bus-stat--staff {
+  background-image: image-url('businessStats_staffIcon.png');
+}
+
+.bus-stat--assets {
+  background-image: image-url('businessStats_assetsIcon.png');
+}
+
+.bus-stat--help {
+  background-image: image-url('businessStats_helpIcon.png');
+}*/
+
+.gamification-box {
+  min-height: 192px;
+  padding-left: calc(3.5rem + 192px);
+}
+
+.gamification-box__img {
+  left: 1.5rem;
+  min-width: 192px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.box.bg-help:hover {
+  background: $color-help !important; // Override bootstrap default in this rare case
+}
+
+.warranty-dot {
+  border-radius: 50%;
+  display: inline-block;
+  height: 0.5rem;
+  margin-right: 0.5rem;
+  width: 0.5rem;
+}
+
+.warranty-dot--safe {
+  background-color: $color-warranty-safe;
+}
+
+.warranty-dot--expiring {
+  background-color: $color-warranty-expiring;
+}
+
+.warranty-dot--expired {
+  background-color: $color-warranty-expired;
+}

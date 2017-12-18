@@ -1,0 +1,52 @@
+.filter-section {
+  background-color: $gray-100;
+}
+
+.filter-item {
+  color: $gray-700;
+  line-height: 3rem;
+  letter-spacing: 0.5px;
+  vertical-align: middle;
+  transition: $transition-collapse;
+  position: relative;
+
+  a {
+    display: block;
+    color: $gray-700;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: $shadow-base;
+    border-right: 2px solid orange;
+    background: white;
+  }
+}
+
+.display-section {
+  background: white;
+
+  [class*="ion-"] {
+    font-size: 1.5rem;
+    vertical-align: middle;
+    color: $gray-600;
+    transition: $transition-base;
+    cursor: pointer;
+
+    &:hover {
+      color: $gray-800;
+    }
+
+    + span {
+      color: $gray-600;
+    }
+  }
+}
+
+.display-item__name {
+  color: $gray-700;
+}

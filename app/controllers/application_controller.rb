@@ -2,8 +2,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :current_agency, if: :user_signed_in?
 
   protected
+
+  helper_method :current_agency
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up) do |user_params|
@@ -18,6 +21,14 @@ class ApplicationController < ActionController::Base
           ]
         )
     end
+  end
+
+  def current_agency
+    @current_agency ||= current_user.agencies.first
+  end
+
+  def after_sign_in_path_for(resource)
+    dashboard_path
   end
 
 end

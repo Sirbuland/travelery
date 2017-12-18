@@ -1,0 +1,16 @@
+.alert {
+  border: 0;
+  color: white;
+
+  a {
+    color: white;
+    text-decoration: underline;
+  }
+}
+
+$alerts: primary secondary success danger warning info light dark;
+@each $alert in $alerts {
+  .alert-#{$alert} {
+    background-color: map-get($theme-colors, $alert);
+  }
+}

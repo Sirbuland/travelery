@@ -1,0 +1,50 @@
+.box,
+.half-box {
+  align-items: center;
+  background-color: white;
+  border-radius: $border-radius;
+  box-shadow: $shadow-base;
+  color: $body-color;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  overflow: hidden;
+  padding: 1.5rem;
+  position: relative;
+
+  &:hover {
+    color: $body-color;
+    text-decoration: none;
+  }
+}
+
+.box--with-title {
+  height: calc(100% - 2.5rem); // assumes a .h5.mb-3 title above the box
+}
+
+.box--with-hover {
+  cursor: pointer;
+  transition: $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-hover;
+  }
+}
+
+.half-box {
+  height: calc(50% - 0.9375rem); // 1.875/2
+
+  &:last-child {
+    margin-top: 1.875rem;
+  }
+}
+
+.half-box--with-title {
+  height: calc(50% - 2.1875rem);
+}
+
+.box__inner,
+.box__footer {
+  display: block;
+  width: 100%;
+}

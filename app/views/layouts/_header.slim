@@ -1,0 +1,63 @@
+header.site-header.w-100.clearfix
+  .logo.pull-left
+    = link_to dashboard_path do
+      = image_tag "logo.png", class: "logo-img"
+  .agency-block.pull-right
+    .company-menu
+      - if current_agency.logo.present?
+        = image_tag current_agency.thumb_logo_presence, class: "company__logo-image"
+      - else
+        i.fa.fa-home.company-menu__icon
+      span.company__name
+        = current_agency.name
+        i.fa.fa-chevron-right
+    #main_menu_toggle.main-menu-toggle.float-right
+      .main-menu-toggle__line
+  #main_menu.main-menu
+    .user.text-left
+      = image_tag "user-icon.png", class: "user__img", height: "auto", width: "32"
+      span.user__name = current_user.full_name
+      i.user__arrow.nulodgicon-ios-arrow-right.float-right
+    .company.text-left
+      i.company__icon.nulodgicon-ios-home-outline
+      span.company__name = current_agency.name
+      i.company__arrow.nulodgicon-ios-arrow-right.float-right
+    hr/
+    = link_to dashboard_path, class: "main-menu__item"
+      i.nulodgicon-speedometer
+      | Home (Dashboard)
+    = link_to "#", class: "main-menu__item"
+      i.nulodgicon-ios-list-outline
+      | Company details
+    = link_to "#", class: "main-menu__item"
+      i.nulodgicon-person-stalker
+      | Staff
+    = link_to "#", class: "main-menu__item"
+      i.nulodgicon-ios-email-outline
+      | Messages
+    = link_to "#", class: "main-menu__item"
+      i.nulodgicon-android-add-circle
+      | Submit a ticket
+    = link_to destroy_user_session_path, class: "main-menu__item", method: :delete
+      i.nulodgicon-log-out
+      | Sign out
+
+  .module-menu.row.no-space
+    = link_to "javascript:", class: 'col-md-2 module-item module-item--contract'
+      i.nulodgicon-ios-copy-outline.module-item__icon
+      span.module-item__text Bookings
+    = link_to "javascript:", target: "_blank", class: 'col-md-2 module-item module-item--marketplace'
+      i.nulodgicon-ios-cart-outline.module-item__icon
+      span.module-item__text Vouchers
+    = link_to "javascript:", class: 'col-md-2 module-item module-item--telecom'
+      i.nulodgicon-ios-telephone-outline.module-item__icon
+      span.module-item__text Complaints
+    = link_to "javascript:", class: 'col-md-2 module-item module-item--assets'
+      i.nulodgicon-ios-box-outline.module-item__icon
+      span.module-item__text Accounts
+    = link_to "javascript:", class: 'col-md-2 module-item module-item--helpdesk'
+      i.nulodgicon-ios-help-outline.module-item__icon
+      span.module-item__text Hotels
+    = link_to"javascript:", class: 'col-md-2 module-item module-item--network'
+      i.nulodgicon-ios-pulse.module-item__icon
+      span.module-item__text Customers

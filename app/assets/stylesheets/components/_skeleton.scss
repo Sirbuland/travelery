@@ -1,0 +1,29 @@
+.skeleton {
+  overflow: hidden;
+  animation: fadeIn 1s infinite alternate;
+
+  .pre-vue & {
+    animation: none;
+    opacity: 0.5;
+  }
+}
+
+.skeleton--image {
+  background: $gray-400;
+  display: inline-block;
+}
+
+.skeleton__item {
+  background: $gray-200;
+  display: inline-block;
+  height: 0.8em;
+  width: 100%;
+
+  &:last-child {
+    width: 75%;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0.5; }
+}

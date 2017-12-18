@@ -1,0 +1,10 @@
+// The additional body scoping is for clarification, as this class is only intended for the body tag
+body.split-layout:before {
+  background-color: $gray-100;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 25%;
+}

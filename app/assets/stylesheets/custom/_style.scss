@@ -6,6 +6,10 @@ li {
   list-style: none;
 }
 
+a.text-body:focus, a.text-body:hover {
+  color: #0a0c0d !important;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -285,13 +289,6 @@ input::-webkit-inner-spin-button {
   }
 }
 
-a{
-  color: #27aae1 ;
-  text-decoration: none;
-  &:hover{
-    color:#21c7d6;
-  }
-}
 .mb30{
   margin-bottom: 30px;
 }
