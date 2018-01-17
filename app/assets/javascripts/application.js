@@ -20,3 +20,5 @@
 //= require formvalidation/framework/bootstrap.min
 //= require widgets/pace
 //= require widgets/bootstrap_wizard
+//= require graphs/chart
+//= require booking_charts

@@ -1,17 +1,14 @@
-.container.my-5
+.container.my-3.p-0
   section.dashboard
     .clearfix
-      h2.m-0.float-left Account summary
-      / sync-loader.float-left.ml-3.mt-1 :loading="loading" color="#007bff" size="0.5rem" /
     .row.mt-4
-      = render "agencies/accounts_summary"
-    div
-      .row.mt-4[v-show="!apiErrors.length"]
-        gamification-box :rewards-data="rewards" :loading="loading" :gamification-path="links.gamification" /
-        rewards-box :discount="rewards.discount" :loading="loading" :marketplace-path="links.marketplace" :gamification-path="links.gamification" /
-        summary-box :summary-data="summary" :links="links" /
-        network-activity-box :network-activity-data="networkActivity" :network-activity-path="links.networkActivity" /
-        spending-box :spending-data="spending" :telecom-path="links.telecom" /
-        alerts-box :alert-data="alerts" :links="links" /
-        help-box :helpPath="links.help" /
-        warranty-box :warranty-data="warranties" :links="links" v-if="showWarranty" /
+      = render "dashboard_partials/summary_tabs"
+    .clearfix
+    .row
+      = render "dashboard_partials/accounts_summary"
+      = render "dashboard_partials/searches"
+    .clearfix
+    .row
+      = render "dashboard_partials/bookings"
+      = render "dashboard_partials/vouchers"
+
